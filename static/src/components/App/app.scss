@@ -1,0 +1,217 @@
+@import url("https://fonts.googleapis.com/earlyaccess/mplus1p.css");
+
+* {
+    box-sizing: border-box;
+}
+
+a {
+    color: #32589a;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background: #f5f5f5;
+    font-family: "Mplus 1p";
+    color: #666;
+}
+
+.page {
+    width: 100vw;
+    height: 100vh;
+    overflow: scroll; 
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+h1 {
+    margin: 16px;
+    font-weight: normal;
+    vertical-align: baseline;
+}
+
+h1 img {
+    vertical-align: bottom;
+}
+
+h1 div {
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.right {
+    float: right;
+}
+
+
+.plus {
+    cursor: pointer;
+    transition: all .3; 
+}
+
+.plus:hover {
+    font-weight: bolder;
+}
+
+.select2-search__field,
+.select2-selection__choice,
+.select2-selection__rendered,
+.select2-results__option {
+    font-size: 13px !important;
+}
+
+
+
+.filters {
+    display: inline-block;
+    text-align: right;
+}
+
+.filters .issue_filter {
+    display: inline-block;
+    margin-right: 16px;
+    padding: 8px;
+    border-radius: 10px;
+    border: solid 1px #000;
+    text-align: left;
+}
+.filters .issue_filter select {
+    display: inline-block;
+    border: none;
+    font-size: 16px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.filters span {
+    padding: 8px 16px;
+    border-radius: 10px;
+    background: #ccc;
+}
+
+.filters [data-filter="*"].active {
+    background: #333;
+    color: #fff;
+}
+.filters [data-filter="Story"].active {
+    background: rgba(0, 169, 72, .5);
+    color: #fff;
+}
+.filters [data-filter="Bug"].active {
+    background: rgba(246, 0, 0, .5);
+    color: #fff;
+}
+.filters [data-filter="Other"].active {
+    background: rgba(0, 143, 198, 1);
+    color: #fff;
+}
+
+
+
+
+// ----------------------------------------
+// Forms
+//
+form input[type="text"], form input[type="password"], form select, form textarea, form button {
+    width: 100%;
+    padding: 10px;
+    border: solid 1px #ccc;
+    border-radius: 3px;
+    font-size: 13px;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+form select option {
+    padding: 6px;
+}
+form .field {
+    margin-bottom: 16px; 
+}
+
+form .field:last-child {
+    margin-bottom: 0; 
+}
+form .field button {
+    background: #efefef;
+    cursor: pointer;
+}
+form .field button:hover {
+    background: #f4f4f4;
+}
+
+form .field button.delete {
+    background: #e20808;
+    color: #fff;
+}
+form .field button.delete:hover {
+    opacity: .8;
+}
+
+form .field .checkboxes {
+    label {
+        display: inline-block;
+        padding: 3px 10px; 
+        margin: 5px;
+
+        input {
+            margin: 0 10px 0 0;
+        }
+    }
+}
+
+
+
+// ----------------------------------------
+// Modals
+//
+.modal {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 460px;
+    max-width: 500px;
+    max-height: 100vh;
+    padding: 16px;
+    border-radius: 6px;
+    background: #fff;
+    transition: all .3s;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    z-index: 1000;
+}
+.modal hr {
+    height: 1px;
+    border-bottom: none;
+    margin-bottom: 20px;
+}
+.modal.show {
+    display: inline-block;
+    opacity: 1;
+}
+.overlay {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #000;
+    opacity: 0.4;
+    z-index: 999;
+}
+.overlay.show {
+    display: block;
+}

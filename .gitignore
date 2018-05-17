@@ -1,0 +1,6 @@
+lssue
+**/.env
+**/vendor
+**/.DS_Store
+**/dist
+**/node_modules

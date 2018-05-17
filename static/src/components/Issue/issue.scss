@@ -1,0 +1,47 @@
+li {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    margin: 6px 0;
+    padding: 6px;
+    background: #f1f1f1;
+}
+
+
+.state {
+    width: 1em;
+    text-align: center;
+
+    &.open {
+        color: #28a745;
+    }
+    
+    &.closed {
+        color: #cb2431;
+    }
+
+    svg {
+        fill: currentColor;
+    }
+}
+
+.path {
+    flex-grow: 1;
+    padding: 0 8px;
+
+    .repo {
+        display: inline-block;
+        
+        border-radius: 6px;
+        
+        color: #000;
+        font-size: .9em;
+    }
+}
+
+.status {
+    color: #999;
+    &.open {
+        color: #ccc;
+    }
+}

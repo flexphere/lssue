@@ -1,0 +1,38 @@
+version: 2
+jobs:
+    build:
+        branches:
+            only:
+                - master
+                - develop
+        docker:
+            - image: docker:17.05.0-ce-git
+        working_directory: /go/src/github.com/flexphere/lssue
+        steps:
+            - checkout
+            - setup_remote_docker
+            - run:
+                name: Install dependencies
+                command: |
+                    apk --update add py-pip && pip install awscli
+            - run:
+                name: Clone Submodules
+                command: |
+                    git submodule sync
+                    git submodule update --init
+            - run:
+                name: build image
+                command: |
+                    docker build -t lssue . --build-arg env=production
+            - run:
+                name: push app to ecr
+                command: |
+                    eval $(aws ecr get-login --no-include-email --region ap-northeast-1)
+                    if [ "${CIRCLE_BRANCH}" == "master" ]; then
+                        docker tag lssue:latest 375594724851.dkr.ecr.ap-northeast-1.amazonaws.com/lssue:latest
+                        docker push 375594724851.dkr.ecr.ap-northeast-1.amazonaws.com/lssue:latest
+                    fi
+                    if [ "${CIRCLE_BRANCH}" == "develop" ]; then
+                        docker tag lssue:latest 375594724851.dkr.ecr.ap-northeast-1.amazonaws.com/lssue:develop
+                        docker push 375594724851.dkr.ecr.ap-northeast-1.amazonaws.com/lssue:develop
+                    fi

@@ -1,0 +1,59 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+header {
+    display: flex;
+    height: 60px;
+    margin: 10px 0;
+    padding: 0 20px;
+    justify-content: space-between;
+    align-items: center;   
+}
+
+.logo {
+    flex: 1;
+    font-size: 36px;
+    text-align: center;
+}
+
+.boardlist{
+    flex: 1;
+    font-size: 30px;
+
+    label {
+        position: relative;
+        &:after {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            width: 10px;
+            height: 10px;
+            border-top: solid 1px #000;
+            border-right: solid 1px #000;
+            content:" ";
+            transform: translateY(-25%) rotate(135deg);
+        }
+    }
+
+    select {
+        height: 40px;
+        margin: 10px 0;
+        padding: 10px 40px 10px 10px;
+        border-radius: 0;
+        border: solid 1px #ccc;
+        background: #fff;
+        font-size: 16px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        outline:none;
+    }
+}
+
+.options {
+    flex: 1;
+    font-size: 16px;
+    text-align: right;
+}
+
+.container {
+    width: 1850px;
+}
