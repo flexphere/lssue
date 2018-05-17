@@ -12,6 +12,11 @@ import (
 
 func Issue(ctx *gin.Context) {
 	eventType := ctx.Request.Header.Get("X-GitHub-Event")
+
+	if eventType == "ping" {
+		ctx.AbortWithStatus(http.StatusOK)
+	}
+
 	if eventType != "issues" {
 		ctx.AbortWithStatus(http.StatusBadRequest)
 		return
