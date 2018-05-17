@@ -10,4 +10,6 @@ const prod_config: model.Config = {
   WS_URL: "wss://lssue.io/ws"
 };
 
-export default (process.env.NODE_ENV ? prod_config : dev_config);
+export default (process.env.NODE_ENV == "production"
+  ? prod_config
+  : dev_config);

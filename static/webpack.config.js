@@ -52,6 +52,11 @@ module.exports = {
       filename: "index.html",
       template: "index.pug",
       inject: true
+    }),
+    new webpack.DefinePlugin({
+      "process.env": {
+        NODE_ENV: JSON.stringify(process.env.NODE_ENV)
+      }
     })
   ],
   resolve: {
@@ -70,13 +75,11 @@ module.exports = {
   devtool: "#eval-source-map"
 };
 
+console.log(process.env.NODE_ENV);
 if (process.env.NODE_ENV === "production") {
   module.exports.devtool = "#source-map";
   // http://vue-loader.vuejs.org/en/workflow/production.html
   module.exports.plugins = (module.exports.plugins || []).concat([
-    new webpack.DefinePlugin({
-      IS_PROD: true
-    }),
     new webpack.LoaderOptionsPlugin({
       minimize: true
     })
