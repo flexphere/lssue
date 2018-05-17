@@ -34,7 +34,7 @@ jobs:
                     if [ "${CIRCLE_BRANCH}" == "master" ]; then
                         docker tag lssue:latest 375594724851.dkr.ecr.ap-northeast-1.amazonaws.com/lssue:latest
                         docker push 375594724851.dkr.ecr.ap-northeast-1.amazonaws.com/lssue:latest
-                        ecs-deploy -c flex -n lssue -i 375594724851.dkr.ecr.ap-northeast-1.amazonaws.com/lssue:latest
+                        ecs-deploy -c flex -n lssue -t 300 -i 375594724851.dkr.ecr.ap-northeast-1.amazonaws.com/lssue:latest
                     fi
                     if [ "${CIRCLE_BRANCH}" == "develop" ]; then
                         docker tag lssue:latest 375594724851.dkr.ecr.ap-northeast-1.amazonaws.com/lssue:develop
