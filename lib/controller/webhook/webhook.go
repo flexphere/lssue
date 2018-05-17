@@ -7,6 +7,7 @@ import (
 
 	"github.com/flexphere/lssue/lib/db"
 	"github.com/flexphere/lssue/lib/model"
+	"github.com/flexphere/lssue/lib/ws"
 	"github.com/gin-gonic/gin"
 )
 
@@ -59,6 +60,11 @@ func Issue(ctx *gin.Context) {
 		log.Println(err)
 		ctx.AbortWithStatus(http.StatusInternalServerError)
 		return
+	}
+
+	msg := []byte("Update Issue")
+	if err := ws.Melody.Broadcast(msg); err != nil {
+		panic(err)
 	}
 
 	ctx.AbortWithStatus(http.StatusNoContent)
