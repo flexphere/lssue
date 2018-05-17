@@ -1,4 +1,5 @@
-# lssue
+# lssue 
+[![CircleCI](https://circleci.com/gh/flexphere/lssue/tree/master.svg?style=svg)](https://circleci.com/gh/flexphere/lssue/tree/master)
 
 ## Getting Started
 1. create a new OAuth App in github from [here.](https://github.com/settings/applications/new)
