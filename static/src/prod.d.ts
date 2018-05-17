@@ -1,1 +1,1 @@
-declare var IS_PROD: any;
+declare var process: any;

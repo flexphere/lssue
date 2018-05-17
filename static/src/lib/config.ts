@@ -7,7 +7,7 @@ const dev_config: model.Config = {
 
 const prod_config: model.Config = {
   API_URL: "https://lssue.io/api",
-  WS_URL: "ws://lssue.io/ws"
+  WS_URL: "wss://lssue.io/ws"
 };
 
-export default (IS_PROD ? prod_config : dev_config);
+export default (process.env.NODE_ENV ? prod_config : dev_config);
