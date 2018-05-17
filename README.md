@@ -16,7 +16,6 @@
     ```
 3. install dependencies and run app
     ```
-    dep ensure
     docker-compose build
     docker-compose up -d db
     docker-compose up app
