@@ -19,7 +19,7 @@ type GithubUser struct {
 }
 
 type GithubIssue struct {
-	ID        int          `json:"name"`
+	ID        int          `json:"id"`
 	Title     string       `json:"title"`
 	State     string       `json:"state"`
 	HTMLURL   string       `json:"html_url"`
