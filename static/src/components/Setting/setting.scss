@@ -1,0 +1,64 @@
+.setting {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    border-top: solid 5px #f83939;
+    background: #fff;
+    transition: all .3s;
+
+    &.show {
+        top: 0;
+    }
+}
+
+.close {
+    display: inline-block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #666;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.box {
+    width: 640px;
+    margin: 0 auto;
+}
+
+.title {
+    text-align: center;
+    font-size: 32px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    background: #fefefe;
+
+    .title {
+        text-align: left;
+        font-size: 18px;
+    }
+    .new {
+        color: #666;
+        text-align: right;
+    }
+}
+
+
+.unit {
+    padding: 20px;
+}
+
+
+
+.unit li {
+    margin: 5px 0;
+    padding: 5px 2em;
+    border: solid 1px #ccc;
+    background: #efefef;
+}

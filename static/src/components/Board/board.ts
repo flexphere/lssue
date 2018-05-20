@@ -5,8 +5,10 @@ import TicketUpdateComponent from "../Modal/TicketUpdate/ticketupdate.vue";
 import TicketDeleteComponent from "../Modal/TicketDelete/ticketdelete.vue";
 import IssueBindComponent from "../Modal/IssueBind/issuebind.vue";
 import IssueUnbindComponent from "../Modal/IssueUnbind/issueunbind.vue";
+import SettingComponent from "../Setting/setting.vue";
 import api from "../../lib/API";
 import ws from "../../lib/WS";
+import ebus from "../../lib/EBus";
 import * as model from "../../lib/model";
 
 export default Vue.extend({
@@ -16,7 +18,8 @@ export default Vue.extend({
     TicketUpdateComponent,
     TicketDeleteComponent,
     IssueBindComponent,
-    IssueUnbindComponent
+    IssueUnbindComponent,
+    SettingComponent
   },
   data() {
     return {
@@ -41,6 +44,9 @@ export default Vue.extend({
     this.getBoardList();
   },
   methods: {
+    showSettings() {
+      ebus.$emit("settings");
+    },
     websocketHandler() {
       ws.$on("receive", (msg: model.WS_Message) => {
         switch (msg) {

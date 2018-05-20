@@ -8,7 +8,7 @@ div
         div.logo
             | lssue
         div.options
-            //- i.fa.fa-cog
+            i.fa.fa-cog(@click="showSettings")
 
     div.container
         pipe-component(v-for="pipe in pipes" :key="pipe.id" :pipe="pipe" :selected_board="selected_board")
@@ -18,6 +18,7 @@ div
     ticket-delete-component
     issue-bind-component(:selected_board="selected_board" :pipes="pipes" :categories="categories" :labels="labels" :issues="issues")
     issue-unbind-component
+    setting-component(:selected_board="selected_board" :boards="boards" :categories="categories" :labels="labels")
 </template>
 
 <script lang="ts" src="./board.ts"></script>
